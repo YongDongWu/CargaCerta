@@ -8,6 +8,7 @@
 
 	<properties>
 		<org.springframework.version>4.0.5.RELEASE</org.springframework.version>
+		<sapui5.version>1.30.2</sapui5.version>
 		<jackson.version>1.9.13</jackson.version>
 	</properties>
 
@@ -110,6 +111,33 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework.version}</version>
+		</dependency>
+		
+		<!-- SAPUI5 -->
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>core</artifactId>
+			<version>${sapui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>resource</artifactId>
+			<version>${sapui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>mobile</artifactId>
+			<version>${sapui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>mobile-ext</artifactId>
+			<version>${sapui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>layout</artifactId>
+			<version>${sapui5.version}</version>
 		</dependency>
 		
 		<!-- Eclipse Link -->

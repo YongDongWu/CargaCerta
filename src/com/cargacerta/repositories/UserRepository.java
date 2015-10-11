@@ -8,6 +8,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cargacerta.models.User;
 
@@ -29,11 +30,13 @@ public class UserRepository {
 		return em.find(User.class, id);
 	}
 	
+	@Transactional
 	public User save(User user) {
 		em.persist(user);
 		return user;
 	}
 	
+	@Transactional
 	public User update(User user) {
 		em.merge(user);
 		return user;

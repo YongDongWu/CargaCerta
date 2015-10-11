@@ -8,6 +8,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cargacerta.models.Driver;
 
@@ -29,11 +30,13 @@ public class DriverRepository {
 		return em.find(Driver.class, id);
 	}
 	
+	@Transactional
 	public Driver save(Driver driver) {
 		em.persist(driver);
 		return driver;
 	}
 	
+	@Transactional
 	public Driver update(Driver driver) {
 		em.merge(driver);
 		return driver;

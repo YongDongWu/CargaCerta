@@ -1,0 +1,46 @@
+<mvc:View
+  controllerName="cargacerta.product.list"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Table
+  	inset="false"
+  	items="{
+			path: '/',
+			sorter: {
+				path: 'name'
+			}
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Produtos" level="H2"/>
+				<Button type="Accept"
+						text="Criar"
+						press="onCreatePress">
+				</Button>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Produto" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true"
+				hAlign="Right">
+				<Text text="Peso" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onDetailPress">
+				<cells>
+					<ObjectIdentifier
+						title="{name}"
+						text="{id}"/>
+					<Text
+						text="{weight}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+  </Table>
+</mvc:View>

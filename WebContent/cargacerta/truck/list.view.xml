@@ -1,0 +1,45 @@
+<mvc:View
+  controllerName="cargacerta.truck.list"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Table
+  	inset="false"
+  	items="{
+			path: '/',
+			sorter: {
+				path: 'name'
+			}
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Caminhões" level="H2"/>
+				<Button type="Accept"
+						text="Criar"
+						press="onCreatePress">
+				</Button>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Placa" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Tipo de Caminhão" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onDetailPress">
+				<cells>
+					<ObjectIdentifier
+						title="{plate}"
+						text="{id}"/>
+					<Text
+						text="{truckType}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+  </Table>
+</mvc:View>

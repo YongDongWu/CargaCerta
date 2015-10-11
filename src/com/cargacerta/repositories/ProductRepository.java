@@ -8,6 +8,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cargacerta.models.Product;
 
@@ -29,11 +30,13 @@ public class ProductRepository {
 		return em.find(Product.class, id);
 	}
 	
+	@Transactional
 	public Product save(Product product) {
 		em.persist(product);
 		return product;
 	}
 	
+	@Transactional
 	public Product update(Product product) {
 		em.merge(product);
 		return product;

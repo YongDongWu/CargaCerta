@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>CargaCerta</title>
+
+<!-- SAPUI5 -->
+<script src="/resources/sap-ui-core.js"
+	id="sap-ui-bootstrap" data-sap-ui-libs="sap.m,sap.ui.layout"
+	data-sap-ui-theme="sap_bluecrystal"
+	data-sap-ui-xx-bindingSyntax="complex">
+	
+</script>
+
+<script type="text/javascript">
+	jQuery.sap.registerModulePath("cargacerta", "/cargacerta");
+
+	var oShellView = new sap.ui.view({
+		id: "idShell",
+		viewName: "cargacerta.shell",
+		type: sap.ui.core.mvc.ViewType.XML
+	});
+
+	oShellView.placeAt('content');
+</script>
+</head>
+<body class="sapUiBody" role="application" style="margin: 0;">
+	<div id="content"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<mvc:View
+  controllerName="cargacerta.shell"
+  xmlns:u="sap.ui.unified"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+    <u:Shell id="ApplicationShell">
+      <u:headItems>
+        <u:ShellHeadItem
+          tooltip="Navigation"
+          icon="sap-icon://menu2"
+          press="handlePressNavigation" />
+      </u:headItems>
+      <u:search>
+      	<Title
+      	  width="100%"
+      	  level="H3"
+      	  text="CargaCerta"
+      	  textAlign="Center"/>
+      </u:search>
+      <u:paneContent>
+          <List items="{ShellItems>/}" selectionChange="onSelectionChange" mode="SingleSelectMaster" includeItemInSelection="true">
+	          <CustomListItem type="Active" visible="{ShellItems>visible}">
+	              <Text text="{ShellItems>text}"/>
+	          </CustomListItem>
+          </List> 
+      </u:paneContent>
+    </u:Shell>
+</mvc:View>

@@ -8,6 +8,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cargacerta.models.Truck;
 
@@ -29,11 +30,13 @@ public class TruckRepository {
 		return em.find(Truck.class, id);
 	}
 	
+	@Transactional
 	public Truck save(Truck truck) {
 		em.persist(truck);
 		return truck;
 	}
 	
+	@Transactional
 	public Truck update(Truck truck) {
 		em.merge(truck);
 		return truck;
