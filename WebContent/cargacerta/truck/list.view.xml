@@ -37,7 +37,7 @@
 						title="{plate}"
 						text="{id}"/>
 					<Text
-						text="{truckType}" />
+						text="{truckType/name}" />
 				</cells>
 			</ColumnListItem>
 		</items>

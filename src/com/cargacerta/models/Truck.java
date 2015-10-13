@@ -7,7 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Truck {
 
 	@Id
@@ -15,7 +18,7 @@ public class Truck {
 	private Long id;
 	@ManyToOne
 	@JoinColumn
-	private TruckType type;
+	private TruckType truckType;
 	@Column
 	private String plate;
 	
@@ -27,12 +30,12 @@ public class Truck {
 		this.id = id;
 	}
 	
-	public TruckType getType() {
-		return type;
+	public TruckType getTruckType() {
+		return truckType;
 	}
 	
-	public void setType(TruckType type) {
-		this.type = type;
+	public void setTruckType(TruckType truckType) {
+		this.truckType = truckType;
 	}
 	
 	public String getPlate() {

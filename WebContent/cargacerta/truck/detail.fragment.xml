@@ -23,7 +23,17 @@
 				<f:content>
 					<core:Title text="Dados Cadastrais" />
 					<Label text="Tipo de Caminhão" />
-					<Input value="{/truckType}" />
+					<Input
+						value="{/truckType/name}"
+						showSuggestion="true"
+						showValueHelp="true"
+						valueHelpRequest="handleValueHelp"
+						suggestionItems="{TruckTypeCollection>/}"
+						suggestionItemSelected="onTruckTypeSuggestionSelected">
+						<suggestionItems>
+							<core:Item key="{TruckTypeCollection>id}" text="{TruckTypeCollection>name}" />
+						</suggestionItems>
+					</Input>
 					<Label text="Placa" />
 					<Input value="{/plate}" />
 				</f:content>

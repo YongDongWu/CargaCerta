@@ -8,7 +8,7 @@ sap.ui.controller("cargacerta.shell", {
 			{text: "Motoristas", view: "cargacerta.driver.list"},
 			{text: "Tipos de Caminhões", view: "cargacerta.trucktype.list"},
 			{text: "Caminhões", view: "cargacerta.truck.list"},
-			{text: "Produto", view: "cargacerta.product.list"},
+			{text: "Produtos", view: "cargacerta.product.list"},
 			{text: "Usuários", view: "cargacerta.user.list"}
 		];
 

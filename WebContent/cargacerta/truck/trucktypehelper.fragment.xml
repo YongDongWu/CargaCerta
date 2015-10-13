@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Tipos de Caminhão"
+		class="sapUiPopupWithPadding"
+		items="{TruckTypeCollection>/}"
+		search="_handleValueHelpSearch"
+		confirm="_handleValueHelpClose"
+		cancel="_handleValueHelpClose">
+		<StandardListItem
+			title="{TruckTypeCollection>name}"
+			description="{TruckTypeCollection>id}" />
+	</SelectDialog>
+</core:FragmentDefinition>
