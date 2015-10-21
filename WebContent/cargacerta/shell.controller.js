@@ -5,6 +5,7 @@ sap.ui.controller("cargacerta.shell", {
 
 	onBeforeRendering: function() {
 		var worksheets = [
+		    {text: "Rotas", view: "cargacerta.route.list"},
 			{text: "Motoristas", view: "cargacerta.driver.list"},
 			{text: "Tipos de Caminhões", view: "cargacerta.trucktype.list"},
 			{text: "Caminhões", view: "cargacerta.truck.list"},

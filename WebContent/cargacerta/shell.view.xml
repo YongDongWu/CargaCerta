@@ -19,9 +19,7 @@
       </u:search>
       <u:paneContent>
           <List items="{ShellItems>/}" selectionChange="onSelectionChange" mode="SingleSelectMaster" includeItemInSelection="true">
-	          <CustomListItem type="Active" visible="{ShellItems>visible}">
-	              <Text text="{ShellItems>text}"/>
-	          </CustomListItem>
+	          <StandardListItem type="Active" visible="{ShellItems>visible}" title="{ShellItems>text}"/>
           </List> 
       </u:paneContent>
     </u:Shell>

@@ -1,0 +1,38 @@
+<mvc:View
+  controllerName="cargacerta.route.list"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Table
+  	inset="false"
+  	items="{
+			path: '/',
+			sorter: {
+				path: 'name'
+			}
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="Rotas" level="H2"/>
+				<Button type="Accept"
+						text="Criar"
+						press="onCreatePress">
+				</Button>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				width="12em">
+				<Text text="Rota" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" type="Navigation" press="onDetailPress">
+				<cells>
+					<ObjectIdentifier
+						title="{name}"
+						text="{id}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+  </Table>
+</mvc:View>

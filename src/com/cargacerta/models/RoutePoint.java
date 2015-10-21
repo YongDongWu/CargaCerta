@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @Entity
@@ -20,7 +21,7 @@ public class RoutePoint {
 	@JoinColumn(nullable = false)
 	private Route route;
 	@Column(nullable = false)
-	private double latitue;
+	private double latitude;
 	@Column(nullable = false)
 	private double longitude;
 	
@@ -32,6 +33,7 @@ public class RoutePoint {
 		this.id = id;
 	}
 	
+	@JsonIgnore
 	public Route getRoute() {
 		return route;
 	}
@@ -40,12 +42,12 @@ public class RoutePoint {
 		this.route = route;
 	}
 
-	public double getLatitue() {
-		return latitue;
+	public double getLatitude() {
+		return latitude;
 	}
 	
-	public void setLatitue(double latitue) {
-		this.latitue = latitue;
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
 	}
 	
 	public double getLongitude() {

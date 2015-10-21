@@ -1,6 +1,6 @@
 sap.ui.define([
 		'jquery.sap.global',
-		'sap/ui/core/mvc/Controller',
+		'sap/ui/core/mvc/Controller'
 	], function(jQuery, Controller) {
 	"use strict";
 
@@ -34,13 +34,15 @@ sap.ui.define([
 			this.openDialog();
 		},
 		
-		openDialog: function(item) {
+		openDialog: function(item, options) {
 			item = item || {};
+			options = options || {};
 			
 			var detailFragment = sap.ui.xmlfragment(this.getView().getId(), "cargacerta." + this.model + ".detail", this);
 			
 			var dialog = new sap.m.Dialog({
 				title: this.title,
+				contentWidth: options.width,
 				content: detailFragment,
 				beginButton: new sap.m.Button({
 					text: 'Fechar',
@@ -60,6 +62,11 @@ sap.ui.define([
 						});
 					}, this]
 				}),
+				afterOpen: function() {
+					if (options.callback) {
+						options.callback();
+					}
+				},
 				afterClose: function() {
 					dialog.destroy();
 				}
@@ -103,7 +110,9 @@ sap.ui.define([
 			    url: '/rest/' + this.model + "/" + itemId,
 			    contentType : 'application/json',
 			    dataType: 'json',
-			    success: this.openDialog.bind(this)
+			    success: function(data) {
+			    	this.openDialog(data);
+			    }.bind(this)
 			});
 		}
 	});
