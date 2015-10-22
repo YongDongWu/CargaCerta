@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Motoristas"
+		class="sapUiPopupWithPadding"
+		items="{DriverCollection>/}"
+		search="_handleDriverValueHelpSearch"
+		confirm="_handleDriverValueHelpClose"
+		cancel="_handleDriverValueHelpClose">
+		<StandardListItem
+			title="{DriverCollection>name}"
+			description="{DriverCollection>id}" />
+	</SelectDialog>
+</core:FragmentDefinition>

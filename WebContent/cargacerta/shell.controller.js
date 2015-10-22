@@ -7,9 +7,10 @@ sap.ui.controller("cargacerta.shell", {
 		var worksheets = [
 		    {text: "Rotas", view: "cargacerta.route.list"},
 			{text: "Motoristas", view: "cargacerta.driver.list"},
-			{text: "Tipos de Caminhões", view: "cargacerta.trucktype.list"},
+			{text: "Tipos de Caminhões", view: "cargacerta.truckType.list"},
 			{text: "Caminhões", view: "cargacerta.truck.list"},
 			{text: "Produtos", view: "cargacerta.product.list"},
+			{text: "Execução de Rotas", view: "cargacerta.routeExecution.list"},
 			{text: "Usuários", view: "cargacerta.user.list"}
 		];
 

@@ -1,0 +1,69 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<l:Grid
+		defaultSpan="L12 M12 S12"
+		width="auto">
+		<l:content>
+			<f:SimpleForm id="SimpleFormChange480"
+				minWidth="1024"
+				maxContainerCols="2"
+				editable="true"
+				layout="ResponsiveGridLayout"
+				title="Execução de Rota"
+				labelSpanL="4"
+				labelSpanM="4"
+				emptySpanL="0"
+				emptySpanM="0"
+				columnsL="2"
+				columnsM="2"
+				class="editableForm">
+				<f:content>
+					<core:Title text="Dados Cadastrais" />
+					<Label text="Data Inicial" />
+					<DatePicker value="{/startDate}" valueFormat="yyyy-MM-dd" displayFormat="long"/>
+					<Label text="Data de Entrega" />
+					<DatePicker value="{/deliveryDate}" valueFormat="yyyy-MM-dd" displayFormat="long"/>
+					<Label text="Motorista" />
+					<Input
+						value="{/driver/name}"
+						showSuggestion="true"
+						showValueHelp="true"
+						valueHelpRequest="handleDriverValueHelp"
+						suggestionItems="{DriverCollection>/}"
+						suggestionItemSelected="onDriverSuggestionSelected">
+						<suggestionItems>
+							<core:Item key="{DriverCollection>id}" text="{DriverCollection>name}" />
+						</suggestionItems>
+					</Input>
+					<Label text="Caminhão" />
+					<Input
+						value="{/truck/plate}"
+						showSuggestion="true"
+						showValueHelp="true"
+						valueHelpRequest="handleTruckValueHelp"
+						suggestionItems="{TruckCollection>/}"
+						suggestionItemSelected="onTruckSuggestionSelected">
+						<suggestionItems>
+							<core:Item key="{TruckCollection>id}" text="{TruckCollection>plate}" />
+						</suggestionItems>
+					</Input>
+					<Label text="Rota" />
+					<Input
+						value="{/route/name}"
+						showSuggestion="true"
+						showValueHelp="true"
+						valueHelpRequest="handleRouteValueHelp"
+						suggestionItems="{RouteCollection>/}"
+						suggestionItemSelected="onRouteSuggestionSelected">
+						<suggestionItems>
+							<core:Item key="{RouteCollection>id}" text="{RouteCollection>name}" />
+						</suggestionItems>
+					</Input>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

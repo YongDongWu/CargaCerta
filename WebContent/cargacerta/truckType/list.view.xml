@@ -1,5 +1,5 @@
 <mvc:View
-  controllerName="cargacerta.trucktype.list"
+  controllerName="cargacerta.truckType.list"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns="sap.m">
   <Table

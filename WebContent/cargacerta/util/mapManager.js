@@ -8,6 +8,7 @@ sap.ui.define([
     	this.oGoogleMap = null;
     	
     	this.oRoute = null;
+    	this.oRouteExecution = null;
     	
     	this.editMode = false;
     	this.editMarkers = [];

@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Caminhões"
+		class="sapUiPopupWithPadding"
+		items="{TruckCollection>/}"
+		search="_handleTruckValueHelpSearch"
+		confirm="_handleTruckValueHelpClose"
+		cancel="_handleTruckValueHelpClose">
+		<StandardListItem
+			title="{TruckCollection>plate}"
+			description="{TruckCollection>id}" />
+	</SelectDialog>
+</core:FragmentDefinition>

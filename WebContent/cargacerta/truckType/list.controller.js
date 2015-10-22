@@ -4,7 +4,7 @@ sap.ui.define([
 	], function(jQuery, baseListController) {
 	"use strict";
 
-	var CController = baseListController.extend("cargacerta.trucktype.list", {
+	var CController = baseListController.extend("cargacerta.truckType.list", {
 		title: 'Tipo de Caminhão',
 		model: 'truckType',
 	});

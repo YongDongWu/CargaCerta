@@ -9,7 +9,7 @@
 	<properties>
 		<org.springframework.version>4.0.5.RELEASE</org.springframework.version>
 		<sapui5.version>1.30.2</sapui5.version>
-		<jackson.version>1.9.13</jackson.version>
+		<jackson.version>2.6.3</jackson.version>
 	</properties>
 
 	<repositories>
@@ -150,8 +150,8 @@
 
 		<!-- Jackson -->
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
 

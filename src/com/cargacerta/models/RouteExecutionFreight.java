@@ -7,7 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -33,6 +34,7 @@ public class RouteExecutionFreight {
 		this.id = id;
 	}
 	
+	@JsonIgnore
 	public RouteExecution getRouteExecution() {
 		return routeExecution;
 	}
