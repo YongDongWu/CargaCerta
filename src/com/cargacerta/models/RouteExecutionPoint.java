@@ -1,12 +1,17 @@
 package com.cargacerta.models;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -19,11 +24,15 @@ public class RouteExecutionPoint {
 	private Long id;
 	@ManyToOne
 	@JoinColumn(nullable = false)
-	private RouteExecution routeExecution;
+	private RouteExecutionPeriod routeExecutionPeriod;
 	@Column(nullable = false)
 	private double latitude;
 	@Column(nullable = false)
 	private double longitude;
+	@Column(nullable = false)
+	@Temporal(TemporalType.TIMESTAMP)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private Date executionDate;
 	
 	public Long getId() {
 		return id;
@@ -34,12 +43,12 @@ public class RouteExecutionPoint {
 	}
 	
 	@JsonIgnore
-	public RouteExecution getRouteExecution() {
-		return routeExecution;
+	public RouteExecutionPeriod getRouteExecutionPeriod() {
+		return routeExecutionPeriod;
 	}
 	
-	public void setRouteExecution(RouteExecution routeExecution) {
-		this.routeExecution = routeExecution;
+	public void setRouteExecutionPeriod(RouteExecutionPeriod routeExecutionPeriod) {
+		this.routeExecutionPeriod = routeExecutionPeriod;
 	}
 	
 	public double getLatitude() {
@@ -56,5 +65,13 @@ public class RouteExecutionPoint {
 	
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
+	}
+	
+	public Date getExecutionDate() {
+		return executionDate;
+	}
+	
+	public void setExecutionDate(Date executionDate) {
+		this.executionDate = executionDate;
 	}
 }

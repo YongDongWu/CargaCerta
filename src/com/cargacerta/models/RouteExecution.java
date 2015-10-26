@@ -44,7 +44,7 @@ public class RouteExecution {
 	@OneToMany(mappedBy = "routeExecution")
 	private List<RouteExecutionFreight> routeExecutionFreights;
 	@OneToMany(mappedBy = "routeExecution")
-	private List<RouteExecutionPoint> routeExecutionPoints;
+	private List<RouteExecutionPeriod> routeExecutionPeriods;
 	
 	public Long getId() {
 		return id;
@@ -102,11 +102,11 @@ public class RouteExecution {
 		this.routeExecutionFreights = routeExecutionFreights;
 	}
 
-	public List<RouteExecutionPoint> getRouteExecutionPoints() {
-		return routeExecutionPoints;
+	public List<RouteExecutionPeriod> getRouteExecutionPeriods() {
+		return routeExecutionPeriods;
 	}
 
-	public void setRouteExecutionPoints(List<RouteExecutionPoint> routeExecutionPoints) {
-		this.routeExecutionPoints = routeExecutionPoints;
+	public void setRouteExecutionPeriods(List<RouteExecutionPeriod> routeExecutionPeriods) {
+		this.routeExecutionPeriods = routeExecutionPeriods;
 	}
 }
