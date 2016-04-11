@@ -1,0 +1,6 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<core:HTML
+		content="&lt;div id=&quot;executedMap&quot; style=&quot;float: left; width:100%; height:500px;&quot;&gt;&lt;/div&gt;"></core:HTML>
+</core:FragmentDefinition>

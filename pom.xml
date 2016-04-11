@@ -154,6 +154,14 @@
 			<artifactId>jackson-jaxrs-json-provider</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+	
+		<!-- Hana Cloud Platform -->
+		<dependency>
+			<groupId>com.sap.cloud</groupId>
+			<artifactId>neo-java-web-api</artifactId>
+			<version>1.53.18.2</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- JavaEE APIs -->
 		<dependency>

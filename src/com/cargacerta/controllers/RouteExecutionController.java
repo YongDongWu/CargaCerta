@@ -44,7 +44,7 @@ public class RouteExecutionController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public @ResponseBody RouteExecution create(@RequestBody RouteExecution routeExecution) {
+	public @ResponseBody RouteExecution create(@RequestBody RouteExecution routeExecution) throws Exception {
 		return repository.save(routeExecution);
 	}
 	

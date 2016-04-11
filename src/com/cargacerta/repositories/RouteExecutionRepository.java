@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -36,7 +37,36 @@ public class RouteExecutionRepository {
 	}
 	
 	@Transactional
-	public RouteExecution save(RouteExecution routeExecution) {
+	public RouteExecution save(RouteExecution routeExecution) throws Exception {
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		 
+		CriteriaQuery<RouteExecution> q = cb.createQuery(RouteExecution.class);
+		Root<RouteExecution> c = q.from(RouteExecution.class);
+		q.select(c).where(
+			cb.and(
+				cb.or(
+					cb.equal(c.get("driver"), routeExecution.getDriver()),
+					cb.equal(c.get("truck"), routeExecution.getTruck())
+				),
+				cb.or(
+					cb.and(
+						cb.lessThanOrEqualTo(c.<Date>get("startDate"), routeExecution.getStartDate()),
+						cb.greaterThan(c.<Date>get("deliveryDate"), routeExecution.getStartDate())
+					),
+					cb.and(
+						cb.lessThanOrEqualTo(c.<Date>get("startDate"), routeExecution.getDeliveryDate()),
+						cb.greaterThan(c.<Date>get("deliveryDate"), routeExecution.getDeliveryDate())
+					)
+				)
+			)
+		);
+		TypedQuery<RouteExecution> query = em.createQuery(q);
+		List<RouteExecution> results = query.getResultList();
+		
+		if (!results.isEmpty()) {
+			throw new Exception("Conflict");
+		}
+		
 		em.persist(routeExecution);
 		return routeExecution;
 	}

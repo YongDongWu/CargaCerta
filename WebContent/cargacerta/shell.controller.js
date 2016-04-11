@@ -11,6 +11,7 @@ sap.ui.controller("cargacerta.shell", {
 			{text: "Caminhões", view: "cargacerta.truck.list"},
 			{text: "Produtos", view: "cargacerta.product.list"},
 			{text: "Execução de Rotas", view: "cargacerta.routeExecution.list"},
+			{text: "Relatório Execução", view: "cargacerta.report.execution"},
 			{text: "Usuários", view: "cargacerta.user.list"}
 		];
 
